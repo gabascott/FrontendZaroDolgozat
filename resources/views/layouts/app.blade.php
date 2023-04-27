@@ -13,17 +13,16 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="./css/dogaklistazasa.css">
-    <link rel="stylesheet" href="./css/kezdooldal.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/style.css') }}">
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="./js/dogaklistazasa.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+    <main class="min-h-screen bg-gray-100">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
@@ -34,10 +33,14 @@
         </header>
 
         <!-- Page Content -->
-        <main>
+        <div>
             {{ $slot }}
-        </main>
-    </div>
+        </div>
+
+        <footer class="kozepre">
+            Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+        </footer>
+    </main>
 </body>
 
 </html>

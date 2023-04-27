@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/api/szakdogak', [SzakdogaController::class, 'index']);
 Route::post('/api/szakdogak', [SzakdogaController::class, 'ujSzakdoga']);
