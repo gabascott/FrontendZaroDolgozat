@@ -21,6 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api/szakdogak', [SzakdogaController::class, 'index']);
+Route::post('/api/szakdogak', [SzakdogaController::class, 'ujSzakdoga']);
+Route::put('/api/szakdogak/{id}', [SzakdogaController::class, 'modositSzakdoga']);
+Route::delete('/api/szakdogak/{id}', [SzakdogaController::class, 'torolSzakdoga']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
